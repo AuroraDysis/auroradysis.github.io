@@ -103,4 +103,4 @@ backup:
     type: git
     theme: next
     repository:
-       github: git@git.coding.net:auroradysis/Blog.git,master
+       github: git@github.com:AuroraDysis/auroradysis.github.io.git,source
