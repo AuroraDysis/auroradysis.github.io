@@ -7,6 +7,7 @@
 
 <html class="{{ html_class | lower }}">
 <head>
+  <meta name="baidu-site-verification" content="FKsJy3SXaO" />
   {% include '_partials/head.swig' %}
   <title>{% block title %}{% endblock %}</title>
 </head>

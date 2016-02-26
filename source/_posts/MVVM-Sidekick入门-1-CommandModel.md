@@ -81,7 +81,13 @@ var cmd = new ReactiveCommand(canExecute: true) { ViewModel = model }; //New Com
 cmd.ListenCanExecuteObservable(/*Some Observable*/).DisposeWith(vm);
 ```
 如果要订阅多个事件流，应该利用Rx将多个事件流合并。
-> 注：此时如果行为与你预期不符，应该删掉后面ListenToIsUIBusy。两者都订阅的话会因为其中一个事件流变化开始或者关闭
+
+> 注：此时如果行为与你预期不符，应该删掉后面ListenToIsUIBusy。两者都订阅的话会因为其中一个事件流变化开始或者关闭。如果你需要两个同时订阅的话，应该这样写：
+> ``` CSharp
+cmd.ListenCanExecuteObservable(
+                    vm.ListenChanged(x => x.IsUIBusy, x => x.IsLoading)
+                        .Select(_ => !vm.IsUIBusy && !vm.IsLoading));
+```
 
 然后是否要监听UIBusy，并在canExecuteWhenBusy参数中选择在UIBusy时命令是否可以执行：
 ``` CSharp
