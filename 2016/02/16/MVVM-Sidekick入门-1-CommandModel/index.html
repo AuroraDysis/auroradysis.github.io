@@ -69,7 +69,7 @@
 <meta property="og:description" content="CommandModel&amp;#x7B80;&amp;#x4ECB;
 &amp;#x5728;ViewModel &amp;#x4E2D;&amp;#x4F7F;&amp;#x7528; propcmd6 [Tab] [Tab] &amp;#xFF08;&amp;#x5982;&amp;#x679C;&amp;#x4E0D;&amp;#x7528; C#6 &amp;#x5C31;&amp;#x662F; propcmd &amp;#xFF09;&amp;#x547D;&amp;#x4EE4;&amp;#x4F1A;&amp;#x51">
 <meta property="og:image" content="http://auroradysis.com/2016/02/16/MVVM-Sidekick入门-1-CommandModel/o.png">
-<meta property="og:updated_time" content="2016-02-16T10:32:28.670Z">
+<meta property="og:updated_time" content="2016-02-26T08:37:12.099Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MVVM-Sidekick入门(1)---CommandModel">
 <meta name="twitter:description" content="CommandModel&amp;#x7B80;&amp;#x4ECB;
@@ -354,7 +354,8 @@
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmd.ListenCanExecuteObservable(<span class="comment">/*Some Observable*/</span>).DisposeWith(vm);</span><br></pre></td></tr></table></figure>
 <p>&#x5982;&#x679C;&#x8981;&#x8BA2;&#x9605;&#x591A;&#x4E2A;&#x4E8B;&#x4EF6;&#x6D41;&#xFF0C;&#x5E94;&#x8BE5;&#x5229;&#x7528;Rx&#x5C06;&#x591A;&#x4E2A;&#x4E8B;&#x4EF6;&#x6D41;&#x5408;&#x5E76;&#x3002;</p>
 <blockquote>
-<p>&#x6CE8;&#xFF1A;&#x6B64;&#x65F6;&#x5982;&#x679C;&#x884C;&#x4E3A;&#x4E0E;&#x4F60;&#x9884;&#x671F;&#x4E0D;&#x7B26;&#xFF0C;&#x5E94;&#x8BE5;&#x5220;&#x6389;&#x540E;&#x9762;ListenToIsUIBusy&#x3002;&#x4E24;&#x8005;&#x90FD;&#x8BA2;&#x9605;&#x7684;&#x8BDD;&#x4F1A;&#x56E0;&#x4E3A;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x6D41;&#x53D8;&#x5316;&#x5F00;&#x59CB;&#x6216;&#x8005;&#x5173;&#x95ED;</p>
+<p>&#x6CE8;&#xFF1A;&#x6B64;&#x65F6;&#x5982;&#x679C;&#x884C;&#x4E3A;&#x4E0E;&#x4F60;&#x9884;&#x671F;&#x4E0D;&#x7B26;&#xFF0C;&#x5E94;&#x8BE5;&#x5220;&#x6389;&#x540E;&#x9762;ListenToIsUIBusy&#x3002;&#x4E24;&#x8005;&#x90FD;&#x8BA2;&#x9605;&#x7684;&#x8BDD;&#x4F1A;&#x56E0;&#x4E3A;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x6D41;&#x53D8;&#x5316;&#x5F00;&#x59CB;&#x6216;&#x8005;&#x5173;&#x95ED;&#x3002;&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x4E24;&#x4E2A;&#x540C;&#x65F6;&#x8BA2;&#x9605;&#x7684;&#x8BDD;&#xFF0C;&#x5E94;&#x8BE5;&#x8FD9;&#x6837;&#x5199;&#xFF1A;</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cmd.ListenCanExecuteObservable(</span><br><span class="line">                    vm.ListenChanged(x =&gt; x.IsUIBusy, x =&gt; x.IsLoading)</span><br><span class="line">                        .Select(_ =&gt; !vm.IsUIBusy &amp;&amp; !vm.IsLoading));</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>&#x7136;&#x540E;&#x662F;&#x5426;&#x8981;&#x76D1;&#x542C;UIBusy&#xFF0C;&#x5E76;&#x5728;canExecuteWhenBusy&#x53C2;&#x6570;&#x4E2D;&#x9009;&#x62E9;&#x5728;UIBusy&#x65F6;&#x547D;&#x4EE4;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#xFF1A;</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cmdmdl.ListenToIsUIBusy(</span><br><span class="line">            model: vm,</span><br><span class="line">            canExecuteWhenBusy: <span class="keyword">false</span>);</span><br></pre></td></tr></table></figure>

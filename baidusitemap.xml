@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>http://auroradysis.com/2016/02/16/MVVM-Sidekick%E5%85%A5%E9%97%A8-1-CommandModel/</loc>
+    <lastmod>2016-02-26T08:37:12.099Z</lastmod>
+    <data>
+        <display>
+        <title>MVVM-Sidekick入门(1)---CommandModel</title>
+        <pubTime>2016-02-16T06:45:12.000Z</pubTime>
+        
+        <tag>C#</tag>
+         
+        <tag>MVVM</tag>
+         
+        <tag>MVVM-Sidekick</tag>
+         
+        <tag>WPF</tag>
+         
+         
+           
+             
+              <breadCrumb title="MVVM-Sidekick" url="http://auroradysis.com/categories/MVVM-Sidekick/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://auroradysis.com/2016/02/16/%E8%B4%9D%E5%A3%B3%E7%94%9F%E6%B4%BB%E7%9B%92%E5%AD%90/</loc>
     <lastmod>2016-02-22T07:48:36.634Z</lastmod>
     <data>
@@ -55,32 +81,6 @@
         <display>
         <title>MVVM-Sidekick入门</title>
         <pubTime>2016-02-16T05:21:01.000Z</pubTime>
-        
-        <tag>C#</tag>
-         
-        <tag>MVVM</tag>
-         
-        <tag>MVVM-Sidekick</tag>
-         
-        <tag>WPF</tag>
-         
-         
-           
-             
-              <breadCrumb title="MVVM-Sidekick" url="http://auroradysis.com/categories/MVVM-Sidekick/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://auroradysis.com/2016/02/16/MVVM-Sidekick%E5%85%A5%E9%97%A8-1-CommandModel/</loc>
-    <lastmod>2016-02-16T10:32:28.670Z</lastmod>
-    <data>
-        <display>
-        <title>MVVM-Sidekick入门(1)---CommandModel</title>
-        <pubTime>2016-02-16T06:45:12.000Z</pubTime>
         
         <tag>C#</tag>
          
